@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>バージョンが違う・エラーが出たときの切り分け | um.Lab</title>
+<meta name="description" content="VRChatアバター改変でよくある「バージョンが違う」「赤いエラー」の切り分け早見表。どこを見て、どう直すか。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<nav class="crumb"><a href="../index.html">um.Lab トップ</a> ＞ <a href="index.html">改変ガイド</a> ＞ バージョンの切り分け</nav>
+
+<h1>バージョンが違う・エラーが出たときの切り分け</h1>
+<p class="lead">改変で詰まる原因のほとんどは「バージョンの不一致」か「導入したものの競合」です。焦って全部入れ直す前に、このページの順番で確認してください。</p>
+
+<div class="note">
+<strong>切り分けの基本：</strong> エラーが出たら、まず Unity の <strong>Console</strong>（下部のタブ）にある赤いエラーの文章を読みます。最初の1件が根本原因で、後ろはその巻き添えのことが多いです。エラーの文章は選択してコピーできます。
+</div>
+
+<section>
+<h2>症状1：「Unityのバージョンが違います」と言われる</h2>
+<h3>確認するところ</h3>
+<ul>
+<li>Unity Hub の Installs で、使っている Unity が <code>2022.3.22f1</code> になっているか</li>
+<li>VCC の Settings → Unity で指定されている Unity が同じ版か</li>
+<li>プロジェクトを作ったときの Unity と、今開いている Unity が同じ版か</li>
+</ul>
+<h3>対処</h3>
+<ol>
+<li>違う版で作ってしまったプロジェクトは、そのまま開かず、VCC から <code>2022.3.22f1</code> でプロジェクトを作り直すのが安全です（版をまたいで開くと、自動変換で中身が変わって戻せなくなります）。</li>
+<li>Unity Hub に <code>2022.3.22f1</code> が無ければ、VCC の案内から追加インストールします。</li>
+</ol>
+</section>
+
+<section>
+<h2>症状2：プロジェクトを開くと赤いエラーが大量に出る</h2>
+<h3>確認するところ</h3>
+<ul>
+<li>Console の最初の赤エラーに、導入したツールやアセットの名前が含まれていないか</li>
+<li>そのツールが要求する SDK のバージョン（BOOTH の商品説明に書かれていることが多いです）</li>
+<li>VCC のプロジェクト画面で、SDK（VRChat SDK）が最新になっているか</li>
+</ul>
+<h3>対処</h3>
+<ol>
+<li>VCC でプロジェクトの SDK を更新してから、もう一度 Unity で開きます。</li>
+<li>特定のツールを入れた直後から出る場合は、そのツールの説明にある前提（Modular Avatar が必要、など）を入れ忘れていないか確認します。</li>
+<li>それでも消えない場合は、入れた順番とエラーの文章をメモしてから調べます。手当たり次第に消すと原因が分からなくなります。</li>
+</ol>
+</section>
+
+<section>
+<h2>症状3：VCCが「Unityが見つからない」と言う</h2>
+<h3>確認するところ</h3>
+<ul>
+<li>Unity Hub がインストールされているか（VCC は Hub 経由で Unity を探します）</li>
+<li>Unity Hub 側で <code>2022.3.22f1</code> がインストール済みになっているか</li>
+</ul>
+<h3>対処</h3>
+<ol>
+<li>Unity Hub を先にインストールし、Hub の Installs に <code>2022.3.22f1</code> を追加します。</li>
+<li>VCC の Settings → Unity から、Hub に登録された Unity を指定し直します。</li>
+</ol>
+</section>
+
+<section>
+<h2>症状4：アセットを入れたら別のツールが動かなくなった</h2>
+<h3>確認するところ</h3>
+<ul>
+<li>同じ役割のツールを2つ入れていないか（例：同種のエディタ拡張の重複）</li>
+<li>アセット同梱の古い SDK やプラグインが、プロジェクト側の新しいものと競合していないか</li>
+</ul>
+<h3>対処</h3>
+<ol>
+<li>アセットの .unitypackage を入れるときは、中身のチェックを外せる画面で「SDK」「Plugins」のような同梱物が無いか先に確認します。</li>
+<li>競合が疑われる場合は、片方を外してエラーが消えるかで切り分けます（プロジェクトのコピーを取ってから試すと安全です）。</li>
+</ol>
+<div class="note">作業前のバックアップは、プロジェクトのフォルダごとコピーしておくだけで大丈夫です。詰まったときに「昨日の状態に戻れる」だけで、切り分けがだいぶ楽になります。</div>
+</section>
+
+<section>
+<h2>それでも分からないとき</h2>
+<p>エラーの文章（最初の赤いエラー1件）をそのままコピーして検索するのが一番の近道です。調べるときは、使っている Unity の版（<code>2022.3.22f1</code>）と SDK のバージョンも一緒にメモしておくと、同じ症状の情報にたどり着きやすくなります。</p>
+<p>環境構築からやり直したい場合は <a href="setup.html">環境構築：UnityとVRChat SDKの準備</a> に戻ってください。</p>
+</section>
+
+<footer>© 2026 um.Lab</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>環境構築：UnityとVRChat SDKの準備 | um.Lab</title>
+<meta name="description" content="VRChatアバター改変のための環境構築手順。Unity HubとVCCを入れて、正しいバージョンでプロジェクトを作るまで。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<nav class="crumb"><a href="../index.html">um.Lab トップ</a> ＞ <a href="index.html">改変ガイド</a> ＞ 環境構築</nav>
+
+<h1>環境構築：UnityとVRChat SDKの準備</h1>
+<p class="lead">改変を始める前に必要な道具をそろえる手順です。所要時間の目安は30分〜1時間（ダウンロード時間を含みます）。</p>
+
+<div class="note">
+<strong>一番大事なこと：</strong> VRChatが指定するUnityのバージョンは <code>2022.3.22f1</code> です。「最新版」ではダメで、この版を正確に入れる必要があります。ここを間違えると、あとで全部やり直しになります。
+</div>
+
+<section>
+<h2>手順1：Unity Hubを入れる</h2>
+<ol>
+<li>Unity公式サイトから <strong>Unity Hub</strong> をダウンロードしてインストールします。</li>
+<li>Unity Hubを起動し、Unityアカウントでサインインします（アカウントが無ければ作成します）。</li>
+<li>ライセンスの確認画面が出たら、無料の Personal ライセンスを追加します。</li>
+</ol>
+<div class="img-slot">Unity Hubのトップ画面（サインイン後）</div>
+</section>
+
+<section>
+<h2>手順2：VCC（VRChat Creator Companion）を入れる</h2>
+<ol>
+<li>VRChat公式サイトのダウンロードページから <strong>Creator Companion</strong> をダウンロードしてインストールします。</li>
+<li>初回起動時に「Unity Hubが見つからない」と言われたら、手順1が済んでいるか確認してください。</li>
+</ol>
+<div class="img-slot">VCCのメイン画面</div>
+</section>
+
+<section>
+<h2>手順3：指定バージョンのUnityを用意する</h2>
+<ol>
+<li>VCCの Settings（設定）→ Unity の画面で、インストール済みのUnityバージョンを確認します。</li>
+<li><code>2022.3.22f1</code> が無ければ、VCCの案内からインストールします（Unity Hub経由で追加されます）。</li>
+<li>バージョンの数字が一字でも違うものは使わないでください。</li>
+</ol>
+<div class="img-slot">VCCの設定画面で 2022.3.22f1 が表示されている状態</div>
+<div class="note">Quest版VRChatの話で「Unity 6」という情報を見かけることがありますが、PC向けアバターのSDKは Unity 2022 系のままです。混同しないでください。</div>
+</section>
+
+<section>
+<h2>手順4：プロジェクトを作る</h2>
+<ol>
+<li>VCCの Projects → Create New Project を押します。</li>
+<li>テンプレートは <strong>Avatar</strong>（Unity 2022）を選び、プロジェクト名を付けます（日本語や空白を含まない名前が安全です）。</li>
+<li>作成が終わったら Open Project でUnityが起動するのを確認します。</li>
+</ol>
+<div class="img-slot">VCCのプロジェクト作成画面（Avatarテンプレート選択）</div>
+</section>
+
+<section>
+<h2>詰まったら</h2>
+<p>途中でエラーが出たり、表示が手順と違う場合は、<a href="version-trouble.html">バージョンが違う・エラーが出たときの切り分け</a> を見てください。それでも分からないときは、エラーの文章をそのままコピーして調べるのが近道です。</p>
+</section>
+
+<footer>© 2026 um.Lab</footer>
+
+</div>
+</body>
+</html>
